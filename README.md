@@ -1,6 +1,7 @@
 # Finance Data Processing and Access Control Backend
 ![Dashboard (Admin)](image.png)
 Figure 1: Admin dashboard overview showing summary cards, charts, and records.
+
 ![Admin](image-3.png)
 Figure 2: Admin role view with full access controls.
 
