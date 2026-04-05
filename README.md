@@ -193,3 +193,48 @@ Finance-System/
 - Financial records support soft deletion for audit-friendly behavior.
 - Summary endpoints are implemented as secure database RPC functions.
 - Write rate limiting is implemented via trigger + function in PostgreSQL.
+
+# Minimal Supabase Backend Wrapper
+
+This is a thin Node.js + Express layer that proxies authenticated requests to Supabase.
+
+## Why this exists
+
+- Gives the project a conventional backend shape for evaluation
+- Keeps Supabase as the data source
+- Exposes a single dashboard wrapper endpoint for cleaner demos
+
+## Endpoints
+
+- `GET /api/health`
+- `GET /api/auth/me`
+- `POST /api/auth/resolve-login`
+- `GET /api/dashboard`
+- `GET /api/records`
+- `POST /api/records`
+- `PATCH /api/records/:id`
+- `DELETE /api/records/:id`
+- `GET /api/admin/users`
+- `PATCH /api/admin/users/:userId/role`
+- `PATCH /api/admin/users/:userId/status`
+
+## API Documentation
+
+- Swagger UI: `GET /api/docs`
+- OpenAPI JSON: `GET /api/openapi.json`
+
+The documentation URL will be:
+
+`https://<your-backend-domain>/api/docs`
+
+## Setup
+
+1. Run:
+
+```bash
+npm install
+npm run dev
+```
+
+The server starts on `http://localhost:4000`.
+`
