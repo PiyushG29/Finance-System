@@ -22,6 +22,15 @@ This is a thin Node.js + Express layer that proxies authenticated requests to Su
 - `PATCH /api/admin/users/:userId/role`
 - `PATCH /api/admin/users/:userId/status`
 
+## API Documentation
+
+- Swagger UI: `GET /api/docs`
+- OpenAPI JSON: `GET /api/openapi.json`
+
+The documentation URL will be:
+
+`https://<your-backend-domain>/api/docs`
+
 ## Setup
 
 1. Copy `.env.example` to `.env`.
