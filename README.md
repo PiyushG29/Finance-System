@@ -1,4 +1,20 @@
 # Finance Data Processing and Access Control Backend
+## Sample Login Credentials
+
+**Analyst**
+
+- Username: `Analyst_1`
+- Password: `edHa#r24$g`
+
+**Viewer**
+
+- Username: `Viewer_1`
+- Password: `yolOPe4101@`
+
+**Admin**
+
+- Username: `Admin001`
+- Password: `Hus%dhd65`
 
 This project is a backend-focused finance management system built with:
 
