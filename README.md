@@ -1,15 +1,4 @@
 # Finance Data Processing and Access Control Backend
-![Dashboard (Admin)](image.png)
-Figure 1: Admin dashboard overview showing summary cards, charts, and records.
-
-![Admin](image-3.png)
-Figure 2: Admin role view with full access controls.
-
-![Analyst](image-2.png)
-Figure 3: Analyst role view with create and update permissions.
-
-![Viewer](image-1.png)
-Figure 4: Viewer role view with read-only access.
 
 This project is a backend-focused finance management system built with:
 
@@ -29,6 +18,15 @@ Implemented roles:
 - `admin`
 
 Access behavior is enforced at database level using RLS policies and helper functions (`has_role`, `get_user_role`).
+
+![Admin](image-3.png)
+Figure 1: Admin role view with full access controls.
+
+![Analyst](image-2.png)
+Figure 2: Analyst role view with create and update permissions.
+
+![Viewer](image-1.png)
+Figure 3: Viewer role view with read-only access.
 
 ### 2) Financial Records Management
 
@@ -53,6 +51,9 @@ Implemented database functions:
 - `get_recent_activity(limit_count)`
 
 All summary functions validate user role before returning data.
+
+![Dashboard (Admin)](image.png)
+Figure 4: Dashboard overview with summary cards, charts, and records.
 
 ### 4) Validation and Error Handling
 
