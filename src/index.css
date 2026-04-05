@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  :root {
+    --background: 34 45% 94%;
+    --foreground: 24 28% 16%;
+
+    --card: 36 40% 97%;
+    --card-foreground: 24 28% 16%;
+
+    --popover: 36 40% 97%;
+    --popover-foreground: 24 28% 16%;
+
+    --primary: 26 58% 43%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 34 35% 88%;
+    --secondary-foreground: 24 28% 20%;
+
+    --muted: 34 28% 90%;
+    --muted-foreground: 24 12% 42%;
+
+    --accent: 160 60% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 32 22% 84%;
+    --input: 32 22% 84%;
+    --ring: 26 58% 43%;
+
+    --radius: 0.75rem;
+
+    --income: 160 60% 45%;
+    --income-foreground: 0 0% 100%;
+    --expense: 0 72% 51%;
+    --expense-foreground: 0 0% 100%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 35 90% 55%;
+    --chart-4: 280 60% 55%;
+    --chart-5: 190 70% 50%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 25% 8%;
+    --foreground: 220 15% 90%;
+    --card: 220 25% 12%;
+    --card-foreground: 220 15% 90%;
+    --popover: 220 25% 12%;
+    --popover-foreground: 220 15% 90%;
+    --primary: 220 70% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 220 15% 85%;
+    --muted: 220 20% 16%;
+    --muted-foreground: 220 10% 55%;
+    --accent: 160 55% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 220 70% 55%;
+    --income: 160 55% 40%;
+    --expense: 0 65% 45%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .auth-marquee {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .auth-marquee::before,
+  .auth-marquee::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 32px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .auth-marquee::before {
+    left: 0;
+    background: linear-gradient(to right, hsl(var(--card)), transparent);
+  }
+
+  .auth-marquee::after {
+    right: 0;
+    background: linear-gradient(to left, hsl(var(--card)), transparent);
+  }
+
+  .auth-marquee__track {
+    display: flex;
+    width: max-content;
+    gap: 0.75rem;
+    animation: auth-marquee-scroll 18s linear infinite;
+    will-change: transform;
+  }
+
+  .auth-marquee__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    padding: 0.45rem 0.8rem;
+    border-radius: 9999px;
+    background: hsl(var(--background) / 0.75);
+    border: 1px solid hsl(var(--border));
+    color: hsl(var(--foreground));
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    box-shadow: 0 1px 2px hsl(220 20% 10% / 0.06);
+  }
+
+  @keyframes auth-marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .auth-marquee__track {
+      animation: none;
+      flex-wrap: wrap;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
